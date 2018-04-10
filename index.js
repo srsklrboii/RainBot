@@ -36,7 +36,6 @@ bot.on('message', async function(message) {
             .setAuthor("Available Commands")
             .addField(`${PREFIX}help`, "Sends this embed.")
             .addField(`${PREFIX}ping`, "Sends you a really precise ping.")
-            .addField(`${PREFIX}say <whatever you want the bot to say>`, "Will repeat what you just said after the command.")
             .addField(`${PREFIX}buy`, "DM's you the link to buy the script hub.")
             .addField(`${PREFIX}purge`, "Mods and higher only: purges the amount of messages you specify (has to be between 1 and 100).")
             .addField(`${PREFIX}kick <user> <reason>`, "Mods and higher only: kicks the mentioned user with the reason why.")
@@ -52,11 +51,6 @@ bot.on('message', async function(message) {
 
         case "ping":
         message.channel.send(`:ping_pong: Pong! It took approximately ${bot.ping}ms to deliver this message.`)
-        break;
-
-        case "say":
-        message.delete()
-        message.channel.send(args.join(" ").slice(3))
         break;
 
         case "purge":
